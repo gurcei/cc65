@@ -302,7 +302,7 @@ void CreateListing (void)
     char HeaderBuf [LINE_HEADER_LEN+1];
 
     /* Open the real listing file */
-    F = fopen (SB_GetConstBuf (&ListingName), "w");
+    F = fopen (SB_GetConstBuf (&ListingName), "a");
     if (F == 0) {
         Fatal ("Cannot open listing file `%s': %s",
                SB_GetConstBuf (&ListingName),

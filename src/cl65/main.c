@@ -1072,6 +1072,7 @@ static void OptListBytes (const char* Opt attribute ((unused)), const char* Arg)
 static void OptListing (const char* Opt attribute ((unused)), const char* Arg)
 /* Create an assembler listing */
 {
+  remove(Arg); // remove any pre-existing listing file (and let multiple ca65 calls accumulate in a single one)
     CmdAddArg2 (&CA65, "-l", Arg);
 }
 
